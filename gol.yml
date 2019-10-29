@@ -9,5 +9,5 @@
       state: present
   - name: deploy warfile 
     get_url:
-     url: https://qt-s3-new-testing.s3-us-west-2.amazonaws.com/gameoflife.war
+     url: http://54.198.10.87:8081/artifactory/gol/gameoflife/gameoflife-web/target/gameoflife.war
      dest: /var/lib/tomcat8/webapps

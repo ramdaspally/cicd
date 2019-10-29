@@ -5,9 +5,7 @@
    - name: install tomcat
      apt:
        name: tomcat8
-       update_cache: yes
        state: present
-       
    - name: deploy warfile 
      get_url:
         url: http://54.198.10.87:8081/artifactory/gol/gameoflife/gameoflife-web/target/gameoflife.war

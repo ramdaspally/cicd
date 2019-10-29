@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+  - name: install tomcat8
+    apt:
+      name: tomcat8
+      update_cache: yes
+      state: present
+  - name: deploy warfile 
+    get_url:
+     url: https://qt-s3-new-testing.s3-us-west-2.amazonaws.com/gameoflife.war
+     dest: /var/lib/tomcat8/webapps

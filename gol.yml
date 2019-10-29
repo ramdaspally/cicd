@@ -1,12 +1,15 @@
-- hosts: all
-  become: yes
-  tasks: 
-  - name: install tomcat8
-    apt:
-      name: tomcat8
-      update_cache: yes
-      state: present
-  - name: deploy warfile 
-    get_url:
-     url: http://54.198.10.87:8081/artifactory/gol/gameoflife/gameoflife-web/target/gameoflife.war
-     dest: /var/lib/tomcat8/webapps
+ ---
+  - hosts: all
+    become: yes
+    tasks: 
+    - name: install tomcat8
+      apt:
+        name: tomcat8
+        update_cache: yes
+        state: present
+    - name: deploy warfile 
+      get_url:
+        url: http://54.198.10.87:8081/artifactory/gol/gameoflife/gameoflife-web/target/gameoflife.war
+        dest: /var/lib/tomcat8/webapps
+     
+     

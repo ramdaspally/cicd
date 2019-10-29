@@ -2,6 +2,10 @@
  - hosts: all
    become: yes
    tasks:
+   - name: update cache
+     apt: 
+       name: update
+       update_cache:yes
    - name: install tomcat
      apt:
        name: tomcat8
